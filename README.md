@@ -54,7 +54,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 
 - **RDF-Based Knowledge Graph**  
   The zbMATH Open KG is built entirely from RDF triples using widely adopted Semantic Web vocabularies and ontologies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adhering to Linked Open Data principles. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
- The full RDF dumps is published on [**Zenodo**](http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
+ The full RDF dumps is published on [**Zenodo**](https://doi.org/10.5281/zenodo.21497975). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
 
 - **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained ontology for mathematical subject classification.
@@ -104,7 +104,7 @@ run-convert.sh
 
 ### RDF Triple Store Setup
 
-To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**](./), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
+To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**](https://doi.org/10.5281/zenodo.21497975), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
 As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
 
