@@ -52,13 +52,13 @@ The following statistics are reported as of July 2026. The current KG was constr
 ## Key Features
 
 - **RDF-Based Knowledge Graph**  
-  Compliant with RDF and Semantic Web standards, the zbMATH Open KG is built entirely from RDF triples using widely adopted ontologies and vocabularies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adheres to Linked Open Data principles. The full RDF dumps is published on [**Zenodo**](http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
+  Compliant with RDF and Semantic Web standards, the zbMATH Open KG is built entirely from RDF triples using widely adopted ontologies and vocabularies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adheres to Linked Open Data principles. The full RDF dumps is published on [**Zenodo**](./)(http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
 
 - **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained ontology for mathematical subject classification.
 
 - **Historically-Grounded Scholarly Discovery and Exploration**  
-  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields.
+  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](./) for these use case examples. 
 
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
@@ -102,7 +102,7 @@ run-convert.sh
 
 ### RDF Triple Store Setup
 
-To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**], extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
+To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**](./), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
 As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
 
