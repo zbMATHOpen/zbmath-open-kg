@@ -75,9 +75,9 @@ The following statistics are reported as of July 2026. The current KG was constr
   - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) is used as an example for its simplicity  
   - *Note:* Our public SPARQL endpoint uses Virtuoso (See the [`zb-virtuoso`](./zb-virtuoso) directory for the complete Virtuoso setup.)
 
-### Data Harvesting
+### Raw Data Harvesting
 
-To harvest data by zbMATH ID (e.g., ID list of zbMATH open access subset: [zbMATH OA subset](https://zenodo.org/records/8021789)), run:
+To harvest raw jsonl data by zbMATH ID (e.g., ID list of zbMATH open access subset: [zbMATH OA subset](https://zenodo.org/records/8021789)), run:
 
 ```bash
 python src/harvest-by-id.py 
