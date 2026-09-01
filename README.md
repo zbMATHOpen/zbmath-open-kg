@@ -63,10 +63,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
-  
-- **Linked Data Interoperability**  
-URI resolution for core entities (i.e., publications, scholars, software references). Cross-links with external URLs and persistent identifiers (e.g., DOI). 
-  
+    
 ## Construction and Setup
 
 ### Prerequisites
