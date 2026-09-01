@@ -18,9 +18,10 @@ To support interoperability, the knowledge graph is constructed using establishe
   - [Data Harvesting](#data-harvesting)
   - [RDF Construction](#rdf-construction)
   - [RDF Triple Store Setup](#rdf-triple-store-setup)
+- [Query Examples](#query-examples)
 - [Repository Structure](#repository-structure)
-- [License](#license)
 - [Citation](#citation)
+- [License](#license)
 - [Contact and Maintenance](#contact-and-maintenance)
 
 ## Ontology and Metadata Descriptions
@@ -109,6 +110,10 @@ As the full dataset is large, we also provide a small sample subset of the zbMAT
 
 - [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [`zb-virtuoso`](./zb-virtuoso) directory.
 - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [`front/`](./front) directory.
+
+## Query Examples
+
+We provide SPARQL query examples for exploring the knowledge graph, covering its main retrieval and relational capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; please refer to [CQs](./cqs) for these query examples.
 
 ## Repository Structure
 
