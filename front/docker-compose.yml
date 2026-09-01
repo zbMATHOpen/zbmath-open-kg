@@ -8,9 +8,26 @@ services:
       - ADMIN_PASSWORD=admin
     volumes:
       - fuseki_data:/fuseki
-      - ./subset-200.ttl:/data.ttl
+      - ../data/subset-200-v2.ttl:/data.ttl
       - ./fuseki-entrypoint.sh:/docker-entrypoint-initdb.d/fuseki-entrypoint.sh
     entrypoint: ["/bin/bash", "/docker-entrypoint-initdb.d/fuseki-entrypoint.sh"]
 
 volumes:
   fuseki_data:
+  
+# services:
+#   fuseki:
+#     image: stain/jena-fuseki
+#     container_name: fuseki
+#     ports:
+#       - "3030:3030"
+#     environment:
+#       - ADMIN_PASSWORD=admin
+#     volumes:
+#       - fuseki_data:/fuseki
+#       - ./subset-200.ttl:/data.ttl
+#       - ./fuseki-entrypoint.sh:/docker-entrypoint-initdb.d/fuseki-entrypoint.sh
+#     entrypoint: ["/bin/bash", "/docker-entrypoint-initdb.d/fuseki-entrypoint.sh"]
+
+# volumes:
+#   fuseki_data:
