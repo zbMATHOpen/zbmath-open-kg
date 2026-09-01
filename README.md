@@ -54,11 +54,11 @@ The following statistics are reported as of July 2026. The current KG was constr
 - **RDF-Based Knowledge Graph**  
   Compliant with RDF and Semantic Web standards, the zbMATH Open KG is built entirely from RDF triples using widely adopted ontologies and vocabularies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adheres to Linked Open Data principles. The full RDF dumps is published on [**Zenodo**](http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
 
-- **Expert-Curated, High-Quality Mathematical Metadata**  
+- **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained ontology for mathematical subject classification.
 
 - **Historically-Grounded Scholarly Discovery and Exploration**  
-  Its comprehensive and long-term coverage enables long-range intellectual analysis such as historically-grounded retrieval tasks, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)disciplines.
+  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields.
 
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
@@ -74,8 +74,8 @@ URI resolution for core entities (i.e., publications, scholars, software referen
 - Python libraries: `rdflib`, `SPARQLWrapper`, and others (see requirements.txt)  
 - Java 8 or higher (required only if you run Apache Jena libraries outside Docker)  
 - Docker (for running RDF triple stores like Apache Jena Fuseki without manual Java setup)  
-  - We use [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) as an example for its simplicity  
-  - *Note:* Production SPARQL endpoints use Virtuoso (See the [`zb-virtuoso`](./zb-virtuoso) directory for the complete Virtuoso setup.)
+  - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) is used as an example for its simplicity  
+  - *Note:* Our public SPARQL endpoint uses Virtuoso (See the [`zb-virtuoso`](./zb-virtuoso) directory for the complete Virtuoso setup.)
 
 ### Data Harvesting
 
@@ -102,24 +102,12 @@ run-convert.sh
 
 ### RDF Triple Store Setup
 
-We provide example using [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) as the RDF triple store for the KG. Fuseki provides a lightweight SPARQL server to host and query your knowledge graph. The example setup is provided in [`front/`](./front). 
+To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**], extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
-We provide a sample subset of the zbMATH Open KG data you can use here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). Before running the example, ensure this initial data file is located in the same folder as the `docker-compose.yml` file. If not, update the volume mapping in [`front/docker-compose.yml`](./front/docker-compose.yml) accordingly:
+As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
 
-```yaml
-- ./subset-200-v2.ttl:/data.ttl
-```
-
-Then, start the service by running:
-```bash
-docker compose up -d
-```
-
-This will launch Fuseki on port 3030 and load the initial data via [`fuseki-entrypoint.sh`](front/fuseki-entrypoint.sh).
-
-Your SPARQL endpoint URL will be available at: `http://localhost:3030/dataset/sparql`
-
-For Virtuoso setup, see the [`zb-virtuoso`](./zb-virtuoso) directory.
+- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [`front/`](./front) directory.
+- [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [`zb-virtuoso`](./zb-virtuoso) directory.
 
 ## Repository Structure
 
