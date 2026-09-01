@@ -23,14 +23,14 @@ Then, start Virtuoso by running:
 docker compose up -d
 ```
 
-Once the service is running, the SPARQL endpoint will be available at: `http://localhost:3030/dataset/sparql`
+Once the service is running, the SPARQL endpoint will be available at: `http://localhost:3030/dataset/sparql`. The RDF data needs to be uploaded before we can explore them via SPARQL, as follows: 
 
-### Uploading Data (manual)
+### (1) Uploading Data (manual)
 
 To load the data manually, first, enter the Virtuoso ISQL Shell
 
 ```
-docker exec -it virtuoso isql 1111 dba dba
+docker exec -it virtuoso isql 1111 dba dba ##change the port and db password depending on your setting in docker-compose
 ```
 
 Then load a single RDF file:
@@ -49,9 +49,20 @@ rdf_loader_run();
 checkpoint;
 ```
 
-Depending on file size, loading may take several minutes. 
+Depending on file size, loading may take several minutes.
 
-### Checking Upload Progress
+### (2) Uploading Data (.bash script)
+
+We prepare a .bash script [`load-data.sh`](./load-data.sh) to automate both the data upload and the progress checking. 
+Make sure that the file is executable ```chmod +x load_data.sh```
+
+This script:
+
+- Copies your ```.ttl``` files into the Virtuoso ```toLoad``` directory
+- Runs ```ld_dir``` + ```rdf_loader_run``` inside ISQL
+- Prints database size repeatedly so you can monitor progress
+
+### Checking RDF Data Upload Progress
 
 You can monitor whether RDF loading is working by observing changes in the database file size.
 
@@ -70,17 +81,6 @@ ls -lh /opt/virtuoso-opensource/database/virtuoso.db
 Run this command a few times; if the file size increases, data is still being loaded.
 
 You can also verify by running queries directly against the SPARQL endpoint: `http://localhost:3030/dataset/sparql`
-
-### Uploading Data (.bash script)
-
-We prepare a .bash script [`load-data.sh`](./load-data.sh) to automate both the data upload and the progress checking. 
-Make sure that the file is executable ```chmod +x load_data.sh```
-
-This script:
-
-- Copies your ```.ttl``` files into the Virtuoso ```toLoad``` directory
-- Runs ```ld_dir``` + ```rdf_loader_run``` inside ISQL
-- Prints database size repeatedly so you can monitor progress
 
 ### Other Settings
 
