@@ -8,6 +8,8 @@ This example demonstrates how to set up the zbMATH Open KG using [Virtuoso](http
 
 ### Running virtuoso
 
+Download the full RDF dump (.ttl format) of the zbMATH Open KG from [Zenodo](./). For convenience, we also provide a small sample subset of the zbMATH Open KG data: [`data/subset-200.ttl`](./data/subset-200.ttl).
+
 Make sure your RDF data is placed in the correct local directory. In the example below, files must be located in ```/local/toLoad```, 
 
 and mounted inside the container as:
@@ -24,7 +26,6 @@ docker compose up -d
 Once the service is running, the SPARQL endpoint will be available at: `http://localhost:3030/dataset/sparql`
 
 ### Uploading Data (manual)
-We provide a sample subset of the zbMATH Open KG data you can use here: [`data/subset-200.ttl`](./data/subset-200.ttl).
 
 To load the data manually, first, enter the Virtuoso ISQL Shell
 
