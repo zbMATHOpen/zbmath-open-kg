@@ -52,7 +52,8 @@ The following statistics are reported as of July 2026. The current KG was constr
 ## Key Features
 
 - **RDF-Based Knowledge Graph**  
-  Compliant with RDF and Semantic Web standards, the zbMATH Open KG is built entirely from RDF triples using widely adopted ontologies and vocabularies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adheres to Linked Open Data principles. The full RDF dumps is published on [**Zenodo**](./)(http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
+  The zbMATH Open KG is built entirely from RDF triples using widely adopted Semantic Web vocabularies and ontologies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adheres to Linked Open Data principles. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
+ The full RDF dumps is published on [**Zenodo**](./)(http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
 
 - **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained ontology for mathematical subject classification.
@@ -63,7 +64,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
   
-- **Linked Data Integration**  
+- **Linked Data Interoperability**  
 URI resolution for core entities (i.e., publications, scholars, software references). Cross-links with external URLs and persistent identifiers (e.g., DOI). 
   
 ## Construction and Setup
