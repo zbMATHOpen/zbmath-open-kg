@@ -23,7 +23,7 @@ Then, start Virtuoso by running:
 docker compose up -d
 ```
 
-You can adjust the password, ports, etc. from the docker-compose file. Once the service is running, the SPARQL endpoint will be available at: `http://localhost:3030/dataset/sparql`. The RDF data needs to be uploaded before we can explore them via SPARQL, as follows: 
+You can adjust the password, ports, etc. from the docker-compose file. Once the service is running, the service (including the SPARQL endpoint) will be available at: `http://localhost:8890`. The RDF data needs to be uploaded before we can explore them via SPARQL, as follows: 
 
 ### (1) Uploading Data (manual)
 
@@ -63,7 +63,7 @@ Check the size of the Virtuoso database:
 ls -lh /opt/virtuoso-opensource/database/virtuoso.db
 ```
 
-Run this command a few times; if the file size increases, data is still being loaded. You can also verify by running queries directly against the SPARQL endpoint: `http://localhost:8890`
+Run this command a few times; if the file size increases, data is still being loaded. You can also verify by running queries directly against the SPARQL endpoint: `http://localhost:8890/sparql/`
 
 ### (2) Uploading Data (.bash script)
 
