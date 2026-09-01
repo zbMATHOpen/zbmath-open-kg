@@ -63,7 +63,7 @@ Check the size of the Virtuoso database:
 ls -lh /opt/virtuoso-opensource/database/virtuoso.db
 ```
 
-Run this command a few times; if the file size increases, data is still being loaded. You can also verify by running queries directly against the SPARQL endpoint: `http://localhost:3030/dataset/sparql`
+Run this command a few times; if the file size increases, data is still being loaded. You can also verify by running queries directly against the SPARQL endpoint: `http://localhost:8890`
 
 ### (2) Uploading Data (.bash script)
 
