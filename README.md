@@ -72,13 +72,10 @@ The following statistics are reported as of July 2026. The current KG was constr
 
 ### Prerequisites
 
-- Python 3.12+  
+- Python 3.12+
+- Docker (for running RDF triple stores)  
 - Python libraries: `rdflib`, `SPARQLWrapper`, and others (see requirements.txt)  
-- Java 8 or higher (required only if you run Apache Jena libraries outside Docker)  
-- Docker (for running RDF triple stores like Apache Jena Fuseki without manual Java setup)  
-  - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) is used as an example for its simplicity  
-  - *Note:* Our public SPARQL endpoint uses Virtuoso (See the [`zb-virtuoso`](./zb-virtuoso) directory for the complete Virtuoso setup.)
-
+  
 ### Raw Data Harvesting
 
 To harvest raw jsonl data by zbMATH ID (e.g., ID list of zbMATH open access subset: [zbMATH OA subset](https://zenodo.org/records/8021789)), run:
