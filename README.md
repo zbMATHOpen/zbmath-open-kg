@@ -52,18 +52,21 @@ The following statistics are reported as of July 2026. The current KG was constr
 ## Key Features
 
 - **RDF-Based Knowledge Graph**  
-  The zbMATH Open KG is built entirely from RDF triples using widely adopted Semantic Web vocabularies and ontologies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adheres to Linked Open Data principles. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
+  The zbMATH Open KG is built entirely from RDF triples using widely adopted Semantic Web vocabularies and ontologies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adhering to Linked Open Data principles. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
  The full RDF dumps is published on [**Zenodo**](http://zenodo). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
 
 - **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained ontology for mathematical subject classification.
 
+- **KG Validation**  
+  The KG was validated at three complementary levels: (i) _syntactic validity_ of the RDF serialization, (ii) _structural consistency_, and (iii) _Competency Question-based evaluation_ for testing the coverage. See [CQs](./cqs) for the full set of CQs and SPARQL queries used to execute them.
+
 - **Historically-Grounded Scholarly Discovery and Exploration**  
-  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](./) for these use case examples. 
+  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](./) for examples of these use cases.
 
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
-    
+  
 ## Construction and Setup
 
 ### Prerequisites
