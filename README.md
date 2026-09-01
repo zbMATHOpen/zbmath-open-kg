@@ -104,8 +104,8 @@ To explore the knowledge graph and query the data using SPARQL, the RDF data nee
 
 As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
 
-- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [`front/`](./front) directory.
 - [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [`zb-virtuoso`](./zb-virtuoso) directory.
+- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [`front/`](./front) directory.
 
 ## Repository Structure
 
