@@ -8,7 +8,7 @@ This example demonstrates how to set up the zbMATH Open KG using [Virtuoso](http
 
 ### Running virtuoso
 
-Download the full RDF dump (.ttl format) of the zbMATH Open KG from [Zenodo](./). For convenience, we also provide a small sample subset of the zbMATH Open KG data: [`data/subset-200.ttl`](./data/subset-200.ttl).
+Download the full RDF dump (.ttl format) of the zbMATH Open KG from [Zenodo](https://doi.org/10.5281/zenodo.21497975). For convenience, we also provide a small sample subset of the zbMATH Open KG data: [`data/subset-200-v2.ttl`](./data/subset-200-v2.ttl).
 
 Make sure your RDF data is placed in the correct local directory. In the example below, files must be located in ```/local/toLoad```, 
 
