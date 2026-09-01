@@ -1,13 +1,12 @@
-## zbMATH Open KG: RDF Triple Store Setup
+## zbMATH Open KG: RDF Triple Store Setup (Apache Jena Fuseki)
 
 ### Requirements
 
 - [Docker](https://www.docker.com/get-started) (includes Docker Compose)
 
-
 This example demonstrates how to set up the zbMATH Open KG using [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) as the RDF triple store. Fuseki is a lightweight SPARQL server that allows you to host and query your knowledge graph easily.
 
-We provide a sample subset of the zbMATH Open KG data you can use here: [`data/subset-200.ttl`](./data/subset-200.ttl).
+Download the full RDF dump (.ttl format) of the zbMATH Open KG from [Zenodo](./). For convenience, we also provide a small sample subset of the zbMATH Open KG data: [`data/subset-200.ttl`](./data/subset-200.ttl).
 
 Before running the example, ensure the initial data file is located in the same folder as the `docker-compose.yml` file. 
 If not, update the volume mapping in `docker-compose.yml` accordingly:
