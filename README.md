@@ -3,7 +3,7 @@
 
 The zbMATH Open Knowledge Graph (KG) is a large-scale RDF knowledge graph constructed from the zbMATH Open platform. Its combination of temporal depth spanning centuries of mathematical scholarship and expert-curated, domain-specific content provides an open semantic infrastructure for studying the development of mathematical knowledge and tracing scholarly connections across centuries of scholarship. 
 
-The full zbMATh Open KG RDF data dumps are available via [Zenodo](https://doi.org/10.5281/zenodo.21497975). The knowledge graph is constructed using established Semantic Web vocabularies and ontologies and designed to align with FAIR principles; see our [paper](./) for details. 
+The full zbMATh Open KG RDF data dumps are available via [Zenodo](https://doi.org/10.5281/zenodo.21497975). The knowledge graph is constructed using established Semantic Web vocabularies and ontologies and designed to align with FAIR principles; see our [paper](https://arxiv.org/abs/2609.00969) for details. 
 
 **Update**: The zbMATH Open Knowledge Graph has been updated; this description reflects the changes and features introduced in the latest version. For previous version, see [v01](./v01/).
 
@@ -63,7 +63,7 @@ The following statistics are reported as of July 2026. The current KG was constr
   The KG was validated at three complementary levels: (i) _syntactic validity_ of the RDF serialization, (ii) _structural consistency_, and (iii) _Competency Question-based evaluation_ for testing the coverage. See [CQs](./cqs) for the full set of CQs and SPARQL queries used to execute them.
 
 - **Historically-Grounded Scholarly Discovery and Exploration**  
-  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](./) for examples of these use cases.
+  Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](https://arxiv.org/abs/2609.00969) for examples of these use cases.
 
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
@@ -127,7 +127,17 @@ We provide SPARQL query examples for exploring the knowledge graph, covering its
 
 ## Citation
 
-```to be added```
+```
+@misc{susanti2026zbmathopenknowledgegraph,
+      title={The zbMATH Open Knowledge Graph: Tracing Centuries of Mathematical Research}, 
+      author={Yuni Susanti and Moritz Schubotz},
+      year={2026},
+      eprint={2609.00969},
+      archivePrefix={arXiv},
+      primaryClass={cs.DL},
+      url={https://arxiv.org/abs/2609.00969}, 
+}
+```
 
 ## License
 
