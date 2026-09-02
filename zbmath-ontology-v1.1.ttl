@@ -1,0 +1,245 @@
+@prefix zb: <https://zbmath.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix msc: <http://msc2020.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+#################################################################
+# Ontology metadata
+#################################################################
+
+<https://w3id.org/zbmath/ontology> a owl:Ontology ;
+
+    dcterms:title
+        "zbMATH Open Knowledge Graph Ontology"@en ;
+
+    dcterms:description
+        "A lightweight OWL ontology describing the bibliographic and expert-curated semantic entities and relationships represented in the zbMATH Open Knowledge Graph. The ontology reuses established Semantic Web vocabularies, including Dublin Core Terms, Schema.org, SKOS, and CiTO."@en ;
+
+    dcterms:creator
+        <https://github.com/zbMATHOpen/> ;
+
+    dcterms:license
+        <https://creativecommons.org/licenses/by/4.0/> ;
+
+    owl:versionIRI
+        <https://w3id.org/zbmath/ontology/1.1> ;
+
+    owl:versionInfo
+        "1.1" ;
+
+    vann:preferredNamespaceUri
+        "https://zbmath.org/" ;
+
+    vann:preferredNamespacePrefix
+        "zb" .
+
+#################################################################
+# Core scholarly resources
+#################################################################
+
+schema:ScholarlyArticle a owl:Class ;
+    rdfs:label "Scholarly Article"@en .
+
+schema:Person a owl:Class ;
+    rdfs:label "Person"@en .
+
+schema:Organization a owl:Class ;
+    rdfs:label "Organization"@en .
+
+schema:Periodical a owl:Class ;
+    rdfs:label "Periodical"@en .
+
+schema:Review a owl:Class ;
+    rdfs:label "Review"@en .
+
+schema:SoftwareApplication a owl:Class ;
+    rdfs:label "Software Application"@en .
+
+schema:PropertyValue a owl:Class ;
+    rdfs:label "Property Value"@en .
+
+
+#################################################################
+# zbMATH document-type resources
+#################################################################
+
+zb:doctype/journal-article a rdfs:Class ;
+    rdfs:label "Journal Article"@en ;
+    rdfs:subClassOf schema:ScholarlyArticle ;
+    skos:notation "j" .
+
+zb:doctype/collection-article a rdfs:Class ;
+    rdfs:label "Collection Article"@en ;
+    rdfs:subClassOf schema:ScholarlyArticle ;
+    skos:notation "a" .
+
+zb:doctype/book-series a rdfs:Class ;
+    rdfs:label "Book Series"@en ;
+    rdfs:subClassOf schema:ScholarlyArticle ;
+    skos:notation "b" .
+
+zb:doctype/preprints a rdfs:Class ;
+    rdfs:label "Preprints"@en ;
+    rdfs:subClassOf schema:ScholarlyArticle ;
+    skos:notation "p" .
+
+
+#################################################################
+# Semantic concepts: MSC and keywords
+#################################################################
+
+zb:ontology/msc-concept a rdfs:Class ;
+    rdfs:label "MSC Concept"@en ;
+    rdfs:subClassOf skos:Concept .
+
+zb:ontology/keyword-concept> a rdfs:Class ;
+    rdfs:label "Keyword Concept"@en ;
+    rdfs:subClassOf skos:Concept .
+
+
+#################################################################
+# Concept schemes
+#################################################################
+
+zb:msc-scheme a skos:ConceptScheme ;
+    dcterms:title
+        "Mathematics Subject Classification (MSC 2020)"@en ;
+    rdfs:label
+        "MSC Classification"@en .
+
+zb:keyword-scheme a skos:ConceptScheme ;
+    dcterms:title
+        "zbMATH Keyword Scheme"@en ;
+    rdfs:label
+        "zbMATH Keywords"@en .
+
+
+#################################################################
+# External vocabulary terms used by the KG
+#
+# The KG uses the following established vocabulary
+# classes and properties directly. Their semantics are inherited
+# from the respective external vocabularies.
+#################################################################
+
+# Schema.org classes used by generated resources:
+#
+# schema:ScholarlyArticle
+# schema:Person
+# schema:Organization
+# schema:Periodical
+# schema:Review
+# schema:SoftwareApplication
+# schema:PropertyValue
+#
+# SKOS classes:
+#
+# skos:Concept
+# skos:ConceptScheme
+#
+# Dublin Core Terms properties:
+#
+# dcterms:title
+# dcterms:creator
+# dcterms:type
+# dcterms:subject
+# dcterms:language
+# dcterms:issued
+# dcterms:identifier
+# dcterms:isPartOf
+# dcterms:publisher
+#
+# Schema.org properties:
+#
+# schema:name
+# schema:author
+# schema:authorOf
+# schema:keywords
+# schema:datePublished
+# schema:pagination
+# schema:identifier
+# schema:propertyID
+# schema:value
+# schema:sameAs
+# schema:url
+# schema:review
+# schema:itemReviewed
+# schema:reviewer
+# schema:reviewBody
+# schema:reviewAspect
+# schema:inLanguage
+# schema:software
+# schema:isPartOf
+#
+# SKOS properties:
+#
+# skos:notation
+# skos:prefLabel
+# skos:inScheme
+# skos:broader
+# skos:narrower
+#
+# CiTO:
+#
+# cito:cites
+#
+# RDFS:
+#
+# rdfs:label
+# rdfs:seeAlso
+
+schema:ScholarlyArticle
+    rdfs:comment
+        "In the zbMATH Open Knowledge Graph, generated document resources are typed as schema:ScholarlyArticle. The document metadata is represented using established vocabulary properties."@en .
+
+schema:Person
+    rdfs:comment
+        "In the zbMATH Open Knowledge Graph, persons are used for authors and reviewers. (Disambiguated) author resources are linked to documents using dcterms:creator and schema:author, and are linked back to documents using schema:authorOf. Reviewers are linked to reviews using schema:reviewer and dcterms:creator."@en .
+
+zb:ontology/msc-concept
+    rdfs:comment
+        "Mathematics Subject Classification (MSC) in the zbMATH Open Knowledge Graph. The MSC is assigned to the publication by human expert. MSC resources are also typed as skos:Concept and are linked to the MSC 2020 concept scheme using skos:inScheme."@en .
+
+zb:ontology/keyword-concept
+    rdfs:comment
+        "Mathematic-specific keywords in the zbMATH Open Knowledge Graph. These controlled keywords are assigned to the publication by human expert. Keyword resources are also typed as skos:Concept and are linked to the zbMATH keyword scheme using skos:inScheme."@en .
+
+schema:Review
+    rdfs:comment
+        "Expert-curated reviews of mathematic publication. In the zbMATH Open Knowledge Graph, a review is linked to the reviewed scholarly article using schema:itemReviewed and from the article using schema:review. Review metadata includes schema:reviewBody, schema:inLanguage, schema:reviewAspect, schema:reviewer, and dcterms:creator."@en .
+
+schema:SoftwareApplication
+    rdfs:comment
+        "Expert-curated linking of mathematical software to the related publication. In the zbMATH Open Knowledge Graph, software resources are represented as schema:SoftwareApplication instances and are linked from scholarly articles using schema:software. The current generator also represents the software resource as schema:isPartOf the article."@en .
+
+schema:identifier rdfs:comment
+    "The KG generator uses schema:identifier with heterogeneous RDF values, including schema:PropertyValue resources, DOI URI resources, and literal software identifiers."@en .
+
+schema:url rdfs:comment
+    "The KG generator uses schema:url for external links; generated values may be RDF URIs or literal fallbacks."@en .
+
+dcterms:type rdfs:comment
+    "The KG generator normally uses document-type resources here, but may emit a literal for unknown document type codes."@en .
+
+zb:ontology/msc-concept rdfs:comment
+    "Custom zbMATH class for MSC concepts; generated instances are also typed as skos:Concept."@en .
+
+zb:ontology/keyword-concept rdfs:comment
+    "Custom zbMATH class for keyword concepts; generated instances are also typed as skos:Concept."@en .
+
+#################################################################
+# Provenance / namespace documentation
+#################################################################
+
+<https://zbmath.org/ontology> rdfs:seeAlso
+    <https://w3id.org/zbmath/ontology> .
+
+<https://w3id.org/zbmath/ontology/1.1> rdfs:seeAlso
+    <https://zbmath.org/ontology> .
