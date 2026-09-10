@@ -227,12 +227,6 @@ schema:url rdfs:comment
 dcterms:type rdfs:comment
     "The KG generator normally uses document-type resources here, but may emit a literal for unknown document type codes."@en .
 
-<https://zbmath.org/ontology/msc-concept> rdfs:comment
-    "Custom zbMATH class for MSC concepts; generated instances are also typed as skos:Concept."@en .
-
-<https://zbmath.org/ontology/keyword-concept> rdfs:comment
-    "Custom zbMATH class for keyword concepts; generated instances are also typed as skos:Concept."@en .
-
 #################################################################
 # Provenance / namespace documentation
 #################################################################
