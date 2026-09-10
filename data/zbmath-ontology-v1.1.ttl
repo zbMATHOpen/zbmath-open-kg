@@ -70,36 +70,35 @@ schema:PropertyValue a owl:Class ;
 # zbMATH document-type resources
 #################################################################
 
-zb:doctype/journal-article a rdfs:Class ;
+<https://zbmath.org/doctype/journal-article> a rdfs:Class ;
     rdfs:label "Journal Article"@en ;
     rdfs:subClassOf schema:ScholarlyArticle ;
     skos:notation "j" .
 
-zb:doctype/collection-article a rdfs:Class ;
+<https://zbmath.org/doctype/collection-article> a rdfs:Class ;
     rdfs:label "Collection Article"@en ;
     rdfs:subClassOf schema:ScholarlyArticle ;
     skos:notation "a" .
 
-zb:doctype/book-series a rdfs:Class ;
+<https://zbmath.org/doctype/book-series> a rdfs:Class ;
     rdfs:label "Book Series"@en ;
     rdfs:subClassOf schema:ScholarlyArticle ;
     skos:notation "b" .
 
-zb:doctype/preprints a rdfs:Class ;
+<https://zbmath.org/doctype/preprints> a rdfs:Class ;
     rdfs:label "Preprints"@en ;
     rdfs:subClassOf schema:ScholarlyArticle ;
     skos:notation "p" .
-
 
 #################################################################
 # Semantic concepts: MSC and keywords
 #################################################################
 
-zb:ontology/msc-concept a rdfs:Class ;
+<https://zbmath.org/ontology/msc-concept> a rdfs:Class ;
     rdfs:label "MSC Concept"@en ;
     rdfs:subClassOf skos:Concept .
 
-zb:ontology/keyword-concept> a rdfs:Class ;
+<https://zbmath.org/ontology/keyword-concept> a rdfs:Class ;
     rdfs:label "Keyword Concept"@en ;
     rdfs:subClassOf skos:Concept .
 
@@ -203,11 +202,11 @@ schema:Person
     rdfs:comment
         "In the zbMATH Open Knowledge Graph, persons are used for authors and reviewers. (Disambiguated) author resources are linked to documents using dcterms:creator and schema:author, and are linked back to documents using schema:authorOf. Reviewers are linked to reviews using schema:reviewer and dcterms:creator."@en .
 
-zb:ontology/msc-concept
+<https://zbmath.org/ontology/msc-concept>
     rdfs:comment
         "Mathematics Subject Classification (MSC) in the zbMATH Open Knowledge Graph. The MSC is assigned to the publication by human expert. MSC resources are also typed as skos:Concept and are linked to the MSC 2020 concept scheme using skos:inScheme."@en .
 
-zb:ontology/keyword-concept
+<https://zbmath.org/ontology/keyword-concept>
     rdfs:comment
         "Mathematic-specific keywords in the zbMATH Open Knowledge Graph. These controlled keywords are assigned to the publication by human expert. Keyword resources are also typed as skos:Concept and are linked to the zbMATH keyword scheme using skos:inScheme."@en .
 
