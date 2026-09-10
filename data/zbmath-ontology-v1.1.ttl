@@ -44,26 +44,26 @@
 # Core scholarly resources
 #################################################################
 
-schema:ScholarlyArticle a owl:Class ;
-    rdfs:label "Scholarly Article"@en .
+# schema:ScholarlyArticle a owl:Class ;
+#     rdfs:label "Scholarly Article"@en .
 
-schema:Person a owl:Class ;
-    rdfs:label "Person"@en .
+# schema:Person a owl:Class ;
+#     rdfs:label "Person"@en .
 
-schema:Organization a owl:Class ;
-    rdfs:label "Organization"@en .
+# schema:Organization a owl:Class ;
+#     rdfs:label "Organization"@en .
 
-schema:Periodical a owl:Class ;
-    rdfs:label "Periodical"@en .
+# schema:Periodical a owl:Class ;
+#     rdfs:label "Periodical"@en .
 
-schema:Review a owl:Class ;
-    rdfs:label "Review"@en .
+# schema:Review a owl:Class ;
+#     rdfs:label "Review"@en .
 
-schema:SoftwareApplication a owl:Class ;
-    rdfs:label "Software Application"@en .
+# schema:SoftwareApplication a owl:Class ;
+#     rdfs:label "Software Application"@en .
 
-schema:PropertyValue a owl:Class ;
-    rdfs:label "Property Value"@en .
+# schema:PropertyValue a owl:Class ;
+#     rdfs:label "Property Value"@en .
 
 
 #################################################################
