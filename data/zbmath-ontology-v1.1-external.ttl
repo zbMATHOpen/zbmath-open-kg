@@ -1,4 +1,3 @@
-```turtle
 @prefix zb: <https://zbmath.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -489,4 +488,3 @@ schema:PropertyValue
 <https://w3id.org/zbmath/ontology/1.2>
     rdfs:seeAlso
         <https://zbmath.org/ontology> .
-```
