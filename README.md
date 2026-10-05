@@ -128,7 +128,7 @@ We provide SPARQL query examples for exploring the knowledge graph, covering its
 ## Citation
 
 ```
-@misc{susanti2026zbmathopenknowledgegraph,
+@misc{susanti2026zbmathkg,
       title={The zbMATH Open Knowledge Graph: Tracing Centuries of Mathematical Research}, 
       author={Yuni Susanti and Moritz Schubotz},
       year={2026},
