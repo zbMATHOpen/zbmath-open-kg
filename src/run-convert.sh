@@ -1,6 +1,6 @@
 #!/bin/bash
 #automate RDF building for all jsonl files in input directory
-#e.g.,: python src/create-rdf-v2.py --inp out/out-1.jsonl --out out-1 --> results are saved in out-nt/out-1.nt and out-ttl/out-1.ttl
+#e.g.,: python create-rdf-v2.py --inp out/out-1.jsonl --out out-1 --> results are saved in out-nt/out-1.nt and out-ttl/out-1.ttl
 
 INPUT_DIR="out"
 OUTPUT_DIR_1="out-ttl"
@@ -16,5 +16,5 @@ for input_file in "$INPUT_DIR"/*.jsonl; do
 
     echo "Processing $input_file -> $output_prefix"
 
-    python src/create-rdf.py "$input_file" "$output_prefix"
+    python create-rdf.py "$input_file" "$output_prefix"
 done
