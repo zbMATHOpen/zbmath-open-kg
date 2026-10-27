@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use zbMATH Open KG, please cite the dataset and the associated publication."
+title: "The zbMATH Open Knowledge Graph: Tracing Centuries of Mathematical Research"
+authors:
+  - family-names: "Susanti"
+    given-names: "Yuni"
+  - family-names: "Schubotz"
+    given-names: "Moritz"
+version: "1.0.0"
+date-released: "2026-10-27"
+url: "https://github.com/zbMATHOpen/zbmath-open-kg"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21497975"
+preferred-citation:
+  type: article
+  title: "The zbMATH Open Knowledge Graph: Tracing Centuries of Mathematical Research"
+  authors:
+    - family-names: "Susanti"
+      given-names: "Yuni"
+    - family-names: "Schubotz"
+      given-names: "Moritz"
+  year: 2026
+  url: "https://arxiv.org/abs/2609.00969"
+  identifiers:
+    - type: arxiv
+      value: "2609.00969"
