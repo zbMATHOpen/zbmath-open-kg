@@ -111,13 +111,13 @@ As the full dataset is large, we also provide a small sample subset of the zbMAT
 
 ### Data Validation
 
-To validate the structural consistency of the knowledge graph, run the queries here: [./src/evaluation/](./src/evaluation/). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
+To validate the structural consistency of the knowledge graph, run the queries here: [src/evaluation/](./src/evaluation/). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
 
 Additionally, the coverage and validity was evaluated using 45 competency questions (CQs) defined by expert to assess the graph's core retrieval and relational capabilities. For each CQ, a SPARQL query was executed, and the results were manually compared with the expected answers. See the CQs and their SPARQL queries here: [CQs](./cqs)
 
 ## Query and Use Case Examples
 
-We provide SPARQL query examples for exploring the knowledge graph, covering its core retrieval capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; refer to [CQs](./cqs) for these query examples. Use case examples are provided: [./src/retrieval-tasks/](./src/retrieval-tasks/).
+We provide SPARQL query examples for exploring the knowledge graph, covering its core retrieval capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; refer to [CQs](./cqs) for these query examples. Use case examples are provided: [src/retrieval-tasks/](./src/retrieval-tasks/).
 
 ## Repository Structure
 
