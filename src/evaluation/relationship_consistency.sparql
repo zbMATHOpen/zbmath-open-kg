@@ -1,0 +1,20 @@
+### SKOS hierarchy
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?broader skos:narrower ?narrower .
+    FILTER NOT EXISTS {
+        ?narrower skos:broader ?broader
+    }
+}
+
+### SKOS hierarchy: reverse direction
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?narrower skos:broader ?broader .
+    FILTER NOT EXISTS {
+        ?broader skos:narrower ?narrower
+    }
+}
+
