@@ -67,7 +67,7 @@ The following statistics are reported as of July 2026. The current KG was constr
   Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](https://arxiv.org/abs/2609.00969) for examples of these use cases.
 
 - **SPARQL Query Interface**  
-  A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
+  A public SPARQL endpoint (temporarily at [SPARQL endpoint url](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
   
 ## Data Construction and Validation
 
@@ -75,7 +75,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 
 - Python 3.12+
 - Docker (for running RDF triple stores)  
-- Python libraries: `rdflib`, `SPARQLWrapper`, and others (see requirements.txt)  
+- Python libraries: see [requirements.txt](requirements.txt)  
   
 ### Data Harvesting
 
@@ -102,7 +102,7 @@ src/run-convert.sh
 
 ### RDF Triple Store Setup
 
-To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**](https://doi.org/10.5281/zenodo.21497975), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
+To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [Zenodo](https://doi.org/10.5281/zenodo.21497975), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
 As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [data/subset-200.ttl](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
 
@@ -152,6 +152,6 @@ The zbMATH Open KG is distributed under the [CC-BY-SA 4.0.](https://creativecomm
 
 ## Contact and Maintenance:
 
-The zbMATH Open KG is  maintained by FIZ Karlsruhe (Berlin) and is planned to be updated periodically, annually or twice per year, subject to the availability of the underlying data stream, resource and infrastructure constraint.
+The zbMATH Open KG is  maintained by FIZ Karlsruhe (Berlin, Germany) and is planned to be updated periodically, annually or twice per year, subject to the availability of the underlying data stream, resource and infrastructure constraint.
 
 📧 yuni.susanti@fiz-karlsruhe.de
