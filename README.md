@@ -111,26 +111,26 @@ As the full dataset is large, we also provide a small sample subset of the zbMAT
 
 ### Data Validation
 
-To validate the structural consistency of the knowledge graph, run the queries in [`structural-validity.sparql`](./use-cases-and-evaluation/structural-validity.sparql). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
+To validate the structural consistency of the knowledge graph, run the queries in [`structural-validity.sparql`](./src/evaluation/structural-validity.sparql). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
 
 Additionally, the coverage and validity was evaluated using 45 competency questions (CQs) defined by expert to assess the graph's core retrieval and relational capabilities. For each CQ, a SPARQL query was executed, and the results were manually compared with the expected answers. See the CQs and corresponding SPARQL queries here: [CQs](./cqs)
 
 ## Query and Use Case Examples
 
-We provide SPARQL query examples for exploring the knowledge graph, covering its core retrieval capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; refer to [CQs](./cqs) for these query examples. Use case examples are provided: [./use-cases-and-evaluation/](./use-cases-and-evaluation/), with the code provided here: [`src/retrieval-tasks/`](./src/retrieval-tasks/)
+We provide SPARQL query examples for exploring the knowledge graph, covering its core retrieval capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; refer to [CQs](./cqs) for these query examples. Use case examples are provided: [./src/retrieval-tasks/](./src/retrieval-tasks/).
 
 ## Repository Structure
 
 - [`cqs/`](./cqs) – All competency questions along with their SPARQL queries and description.
 - [`data/`](./data) – `.jsonl` raw data and `.ttl` RDF KG (subset), ontology files (`.ttl`), etc.
-- [`front/`](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability)
-- [`src/`](./src) – Source code for KG construction (data harvest, statistics calculation, RDF transformation, etc).
-- [`src/retrieval-tasks/`](./src/retrieval-tasks/) – Source code and SPARQL queries for historically-grounded scholarly exploration and discovery.
-- [`use-cases-and-evaluation/`](./use-case-and-evaluation) – Evaluation and Use case-specific results and visualizations
-- [`v01/`](./v01) – Earlier version of the KG
-- [`zb-virtuoso/`](./zb-virtuoso) – Docker settings for the Virtuoso triple store
-- [`run-convert.sh`](./run-convert.sh) – Shell script to convert raw data into RDF format
-- [`README.md`](./README.md) – Project documentation
+- [`front/`](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability).
+- [`src/`](./src) – Source code for KG construction (data harvesting, construction, statistics calculation, RDF transformation, preprocessing, etc).
+  - [`src/evaluation/`](./src/evaluation/) – Source code and queries for RDF validation.
+  - [`src/retrieval-tasks/`](./src/retrieval-tasks/) – Source code and queries for retrieval, exploration and use case examples.
+- [`v01/`](./v01) – Earlier version of the KG.
+- [`zb-virtuoso/`](./zb-virtuoso) – Docker settings for the Virtuoso triple store.
+- [`README.md`](./README.md) – Project documentation.
+- [`requirements.txt`](requirements.txt) – Library and dependency to run the source code in the repository.
 
 ## Citation
 
