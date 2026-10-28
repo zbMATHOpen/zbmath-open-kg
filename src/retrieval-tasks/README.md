@@ -1,4 +1,4 @@
-## Historically-Grounded Scholarly Exploration
+## Historically-Grounded Scholarly Exploration Use Case
 
 To demonstrate the utility of the knowledge graph, we present several use case examples we collectively term _historically grounded_ scholarly exploration. These use cases exploit the resource's distinctive combination of extensive temporal coverage and expert-curated semantics for semantic exploration of mathematical research across centuries of scholarship. 
 
