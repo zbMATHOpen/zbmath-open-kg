@@ -20,7 +20,7 @@ Then, start the service by running:
 docker compose up -d
 ```
 
-This will launch Fuseki on port 3030 and automatically load the initial data via [`fuseki-entrypoint.sh`](front/fuseki-entrypoint.sh).
+This will launch Fuseki on port 3030 and automatically load the initial data via [`fuseki-entrypoint.sh`](fuseki-entrypoint.sh).
 As loading the data takes time, you can check the container logs:
 
 ```bash
