@@ -1,0 +1,17 @@
+### Required properties: For each schema:ScholarlyArticle, check that the required properties are present. The number of articles with at least one missing property:
+PREFIX schema:  <https://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT (COUNT(DISTINCT ?article) AS ?violatingArticles)
+WHERE {
+    ?article a schema:ScholarlyArticle .
+    VALUES ?property {
+        dcterms:title
+        dcterms:creator
+        dcterms:type
+        schema:author
+        schema:name
+    }
+    FILTER NOT EXISTS {
+        ?article ?property ?value
+    }
+}
