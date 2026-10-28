@@ -1,0 +1,16 @@
+### Document-type vocabulary: The KG explicitly defines four document types, the query should check membership in this controlled vocabulary:
+PREFIX schema:  <https://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?article a schema:ScholarlyArticle ;
+             dcterms:type ?type .
+    FILTER (
+        ?type NOT IN (
+            <https://zbmath.org/doctype/journal-article>,
+            <https://zbmath.org/doctype/collection-article>,
+            <https://zbmath.org/doctype/book-series>,
+            <https://zbmath.org/doctype/preprints>
+        )
+    )
+}
