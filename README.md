@@ -29,7 +29,7 @@ The full zbMATh Open KG RDF data dumps are available via Zenodo: [DOI:10.5281/ze
 
 We provide machine-readable ontology and dataset metadata descriptions for zbMATH Open KG:
 
-- [zbMATH Open Ontology (OWL)](./data/zbmath-ontology-v1.1.ttl)
+- zbMATH Open Ontology (OWL): [minimal version](./data/zbmath-ontology-v1.1.ttl), [extended version](./data/zbmath-ontology-v1.1-external.ttl)
 - [DCAT + VoID + PROV-O Description](./data/zbmath-kg-dcat-void-prov.ttl) — A DCAT + VoID dataset metadata file with PROV-O provenance and full ETL pipeline documentation
 
 ## Key Statistics
