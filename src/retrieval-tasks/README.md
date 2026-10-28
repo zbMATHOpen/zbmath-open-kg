@@ -1,13 +1,14 @@
-## Historically-Grounded Retrieval
+## Historically-Grounded Scholarly Exploration
 
-We propose **historically-grounded retrieval**, a new paradigm for scholarly IR that shifts focus from popularity-based citation metrics to the historical and conceptual development of knowledge. To enable this, we built a large-scale, historically comprehensive knowledge graph from **zbMATH Open**, covering centuries of mathematical research. 
+To demonstrate the utility of the knowledge graph, we present several use case examples we collectively term _historically grounded_ scholarly exploration. These use cases exploit the resource's distinctive combination of extensive temporal coverage and expert-curated semantics for semantic exploration of mathematical research across centuries of scholarship. 
 
-Built on the proposed paradigm and infrastructure, we formalize and implement four new IR tasks:  
+- Precursor Discovery — identifying potentially overlooked works beyond citations  
+- Conceptual Ancestry — tracing concept migration across (sub)fields  
+- Revival Detection — spotting re-emerging ideas in new contexts  
+- Reviewer–Author Lineage — mapping potential intellectual connection via scholarly interactions (reviewing)  
 
-- **Precursor Retrieval** — identifying overlooked works beyond citations  
-- **Conceptual Ancestry** — tracing concept migration across (sub)fields  
-- **Revival Detection** — spotting re-emerging ideas in new contexts  
-- **Reviewer–Author Lineage** — mapping intellectual transmission via scholarly interactions  
+Importantly, these use cases are **not** intended to establish historical influence; rather, they demonstrate how the KG can surface relationships and patterns for
+further scholarly and historical investigation. 
 
 ## Implementation
 
@@ -27,22 +28,18 @@ endpoint_url = "http://localhost:8890/sparql"  # change into your SPARQL endpoin
 (3) Run the following scripts to perform the respective retrieval tasks:
 
 - **(1) Precursor Retrieval**  
-  Identify overlooked foundational works beyond citation metrics.  
   ```bash
   python precursor-retrieval.py
   ```
 - **(2) Conceptual Ancestry**  
- Trace the migration of concepts across disciplines and subfields.  
   ```bash
   python ancestry-retrieval.py
   ```
 - **(3) Revival Detection**  
-  Detect ideas that are re-emerging in new contexts or domains.  
   ```bash
   python revival-retrieval.py
   ```
 - **(4) Reviewer–Author Lineage**  
-  Map intellectual transmission through scholarly interactions (author-reviewer relationship) 
   ```bash
   python lineage-retrieval.py
   ```
