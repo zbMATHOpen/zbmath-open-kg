@@ -55,7 +55,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 
 - **RDF-Based Knowledge Graph**  
   The zbMATH Open KG is built entirely from RDF triples using widely-adopted Semantic Web vocabularies and ontologies, maximizing interoperability. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
- The full RDF dumps is published on Zenodo: [DOI:10.5281/zenodo.21497975](https://doi.org/10.5281/zenodo.21497975). A sample of approx. 200 records is available: [data/sample.ttl](./data/sample.ttl). 
+ The full RDF dumps is published on Zenodo: [DOI:10.5281/zenodo.21497975](https://doi.org/10.5281/zenodo.21497975). Samples are available here: [data/sample.ttl](./data/sample.ttl) and [data/subset-200.ttl](./data/subset-200-v2.ttl).
 
 - **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained taxonomy for mathematical subject classification.
@@ -104,7 +104,7 @@ src/run-convert.sh
 
 To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [Zenodo](https://doi.org/10.5281/zenodo.21497975), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
-As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for testing: [data/sample.ttl](./data/sample.ttl). We provide setup examples for loading the graph into the following RDF triple stores: 
+As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for testing: [data/subset-200.ttl](./data/subset-200-v2.ttl). We provide setup examples for loading the graph into the following RDF triple stores: 
 
 - [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [zb-virtuoso](./zb-virtuoso) directory.
 - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [front/](./front) directory.
