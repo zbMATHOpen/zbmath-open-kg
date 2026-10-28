@@ -37,7 +37,7 @@ We provide machine-readable ontology and dataset metadata descriptions for zbMAT
 The following statistics are reported as of July 2026. The current KG was constructed using the January 2026 [zbMATH API](https://oai.zbmath.org/) data dump.
 
 - **Temporal Span**: 1763~2025.
-  - See [`decade aggregation count`](./src/retrieval-tasks/decade-aggregation-count.csv) for the per-year distribution.
+  - See [decade aggregation count.csv](./src/retrieval-tasks/decade-aggregation-count.csv) for the per-year distribution.
   - Although the dataset includes some records from earlier years, its coverage is only complete from 1868 to the present day, according to [zbmath.org](https://zbmath.org/about/). 
 - **Triples**: 168M+
 - **Distinct Entities**: 34M+
@@ -55,7 +55,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 
 - **RDF-Based Knowledge Graph**  
   The zbMATH Open KG is built entirely from RDF triples using widely-adopted Semantic Web vocabularies and ontologies, maximizing interoperability. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
- The full RDF dumps is published on Zenodo: [DOI:10.5281/zenodo.21497975](https://doi.org/10.5281/zenodo.21497975). A sample of 200 records is available: [data/subset-200.ttl](./data/subset-200-v2.ttl). 
+ The full RDF dumps is published on Zenodo: [DOI:10.5281/zenodo.21497975](https://doi.org/10.5281/zenodo.21497975). A sample of approx. 200 records is available: [data/sample.ttl](./data/sample.ttl). 
 
 - **Expert-Curated Mathematical Metadata**  
   In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained taxonomy for mathematical subject classification.
@@ -89,11 +89,11 @@ For bulk download (via _sickle_), refers to: [zbMATHOpen Harvester](https://gith
 
 ### Data Construction
 
-Using raw `.jsonl` zbMATH data obtained from the API (see example: [`data/subset-200.jsonl`](./data/subset-200.jsonl)), run the following commands to automatically generate the RDF KG:
+Using raw _.jsonl_ zbMATH data obtained from the API (see example: [data/sample.jsonl](./data/sample.jsonl)), run the following commands to automatically generate the RDF KG:
 
 ```bash
 # Option 1: Run the Python script
-python src/create-rdf-v2.py --inp data/subset-200.jsonl --out data/subset-200.ttl --nt 0
+python src/create-rdf-v2.py --inp data/sample.jsonl --out data/sample.ttl --nt 0
 
 # Option 2: Run the shell script for batch processing
 src/run-convert.sh
@@ -104,7 +104,7 @@ src/run-convert.sh
 
 To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [Zenodo](https://doi.org/10.5281/zenodo.21497975), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
-As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [data/subset-200.ttl](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
+As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for testing: [data/sample.ttl](./data/sample.ttl). We provide setup examples for loading the graph into the following RDF triple stores: 
 
 - [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [zb-virtuoso](./zb-virtuoso) directory.
 - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [front/](./front) directory.
@@ -121,16 +121,16 @@ We provide SPARQL query examples for exploring the knowledge graph, covering its
 
 ## Repository Structure
 
-- [`cqs/`](./cqs) – All competency questions along with their SPARQL queries and description.
-- [`data/`](./data) – `.jsonl` raw data and `.ttl` RDF KG (subset), ontology files (`.ttl`), etc.
-- [`front/`](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability).
-- [`src/`](./src) – Source code for KG construction (data harvesting, construction, statistics calculation, RDF transformation, preprocessing, etc).
-  - [`src/evaluation/`](./src/evaluation/) – Code and queries for RDF validation.
-  - [`src/retrieval-tasks/`](./src/retrieval-tasks/) – Source code and queries for retrieval, exploration and use case examples.
-- [`v01/`](./v01) – Earlier version of the KG.
-- [`zb-virtuoso/`](./zb-virtuoso) – Docker settings for the Virtuoso triple store.
-- [`README.md`](./README.md) – Project documentation.
-- [`requirements.txt`](requirements.txt) – Library and dependency to run the source code in the repository.
+- [cqs/](./cqs) – All competency questions along with their SPARQL queries and description.
+- [data/](./data) – `.jsonl` raw data and `.ttl` RDF KG (subset), ontology files (`.ttl`), etc.
+- [front/](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability).
+- [src/](./src) – Source code for KG construction (data harvesting, construction, statistics calculation, RDF transformation, preprocessing, etc).
+  - [src/evaluation/](./src/evaluation/) – Code and queries for RDF validation.
+  - [src/retrieval-tasks/](./src/retrieval-tasks/) – Source code and queries for retrieval, exploration and use case examples.
+- [v01/](./v01) – Earlier version of the KG.
+- [zb-virtuoso/](./zb-virtuoso) – Docker settings for the Virtuoso triple store.
+- [README.md](./README.md) – Project documentation.
+- [requirements.txt](requirements.txt) – Library and dependency to run the source code in the repository.
 
 ## Citation
 
