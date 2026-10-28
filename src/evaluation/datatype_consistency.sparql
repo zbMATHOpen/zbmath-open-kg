@@ -1,0 +1,17 @@
+### Datatype consistency: dcterms:issued and schema:datePublished are represented as xsd:gYear
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema:  <https://schema.org/>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    VALUES ?property {
+        dcterms:issued
+        schema:datePublished
+    }
+
+    ?resource ?property ?value .
+    FILTER (
+        !isLiteral(?value) ||
+        datatype(?value) != xsd:gYear
+    )
+}
