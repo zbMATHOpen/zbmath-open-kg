@@ -15,3 +15,60 @@ WHERE {
         datatype(?value) != xsd:gYear
     )
 }
+
+### Author references
+PREFIX schema: <https://schema.org/>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?article a schema:ScholarlyArticle ;
+             schema:author ?author .
+    FILTER NOT EXISTS {
+        ?author a schema:Person
+    }
+}
+
+### MSC references
+PREFIX schema:  <https://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?article a schema:ScholarlyArticle ;
+             dcterms:subject ?subject .
+    FILTER NOT EXISTS {
+        ?subject a <https://zbmath.org/ontology/msc-concept>
+    }
+}
+
+### Keyword references
+PREFIX schema: <https://schema.org/>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?article a schema:ScholarlyArticle ;
+             schema:keywords ?keyword .
+    FILTER NOT EXISTS {
+        ?keyword a skos:Concept ;
+                 a <https://zbmath.org/ontology/keyword-concept>
+    }
+}
+
+### Review reference
+PREFIX schema: <https://schema.org/>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?review a schema:Review ;
+            schema:itemReviewed ?article .
+    FILTER NOT EXISTS {
+        ?article a schema:ScholarlyArticle
+    }
+}
+
+### Reviewer reference
+PREFIX schema: <https://schema.org/>
+SELECT (COUNT(*) AS ?violations)
+WHERE {
+    ?review a schema:Review ;
+            schema:reviewer ?reviewer .
+    FILTER NOT EXISTS {
+        ?reviewer a schema:Person
+    }
+}
