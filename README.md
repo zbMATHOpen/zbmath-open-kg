@@ -54,14 +54,14 @@ The following statistics are reported as of July 2026. The current KG was constr
 ## Key Features
 
 - **RDF-Based Knowledge Graph**  
-  The zbMATH Open KG is built entirely from RDF triples using widely adopted Semantic Web vocabularies and ontologies (e.g., ``schema:, dcterms:, skos:, cito:``), supporting interoperability and adhering to Linked Open Data principles. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
- The full RDF dumps is published on [**Zenodo**](https://doi.org/10.5281/zenodo.21497975). A sample of 200 records is available here: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). 
+  The zbMATH Open KG is built entirely from RDF triples using widely-adopted Semantic Web vocabularies and ontologies, maximizing interoperability. In addition, URI resolution is available for core entities (i.e., publications, scholars, software references), with cross-links with external URLs and persistent identifiers (e.g., DOI). 
+ The full RDF dumps is published on Zenodo: [DOI:10.5281/zenodo.21497975](https://doi.org/10.5281/zenodo.21497975). A sample of 200 records is available: [data/subset-200.ttl](./data/subset-200-v2.ttl). 
 
 - **Expert-Curated Mathematical Metadata**  
-  In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained ontology for mathematical subject classification.
+  In addition to standard bibliographic metadata, the KG incorporates annotated mathematical publications with expert-curated reviews and controlled keywords, software references, disambiguated authors, and *Mathematics Subject Classification* (MSC) codes -- a fine-grained taxonomy for mathematical subject classification.
 
 - **KG Validation**  
-  The KG was validated at three complementary levels: (i) _syntactic validity_ of the RDF serialization, (ii) _structural consistency_, and (iii) _Competency Question-based evaluation_ for testing the coverage. See [CQs](./cqs) for the full set of CQs and SPARQL queries used to execute them.
+  The KG was validated at three complementary levels: (i) _syntactic validity_ of the RDF serialization, (ii) _structural consistency_, and (iii) _Competency Question-based evaluation_ for testing the coverage. See [src/evaluation](./src/evaluation) for the validation, and [CQs](./cqs) for full set of CQs and their corresponding SPARQL queries.
 
 - **Historically-Grounded Scholarly Discovery and Exploration**  
   Its extensive temporal coverage and expert-curated semantic contents supports the exploration of mathematical knowledge across generations of scholarship, e.g., identifying connections beyond citation and tracing conceptual lineages across (_sub_)fields. See our [paper](https://arxiv.org/abs/2609.00969) for examples of these use cases.
@@ -104,16 +104,16 @@ src/run-convert.sh
 
 To explore the knowledge graph and query the data using SPARQL, the RDF data needs to be loaded into an RDF triple store. After downloading the full RDF dumps from [**Zenodo**](https://doi.org/10.5281/zenodo.21497975), extract the archive and load the RDF data into your preferred RDF triple store. Examples are provided below. 
 
-As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [`data/subset-200.ttl`](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
+As the full dataset is large, we also provide a small sample subset of the zbMATH Open KG data for convenience: [data/subset-200.ttl](./data/subset-200-v2.ttl). We provide setup examples for loading the knowledge graph into the following RDF triple stores: 
 
-- [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [`zb-virtuoso`](./zb-virtuoso) directory.
-- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [`front/`](./front) directory.
+- [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [zb-virtuoso](./zb-virtuoso) directory.
+- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [front/](./front) directory.
 
 ### Data Validation
 
-To validate the structural consistency of the knowledge graph, run the queries in [`structural-validity.sparql`](./src/evaluation/structural-validity.sparql). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
+To validate the structural consistency of the knowledge graph, run the queries here: [./src/evaluation/](./src/evaluation/). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
 
-Additionally, the coverage and validity was evaluated using 45 competency questions (CQs) defined by expert to assess the graph's core retrieval and relational capabilities. For each CQ, a SPARQL query was executed, and the results were manually compared with the expected answers. See the CQs and corresponding SPARQL queries here: [CQs](./cqs)
+Additionally, the coverage and validity was evaluated using 45 competency questions (CQs) defined by expert to assess the graph's core retrieval and relational capabilities. For each CQ, a SPARQL query was executed, and the results were manually compared with the expected answers. See the CQs and their SPARQL queries here: [CQs](./cqs)
 
 ## Query and Use Case Examples
 
@@ -125,7 +125,7 @@ We provide SPARQL query examples for exploring the knowledge graph, covering its
 - [`data/`](./data) – `.jsonl` raw data and `.ttl` RDF KG (subset), ontology files (`.ttl`), etc.
 - [`front/`](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability).
 - [`src/`](./src) – Source code for KG construction (data harvesting, construction, statistics calculation, RDF transformation, preprocessing, etc).
-  - [`src/evaluation/`](./src/evaluation/) – Source code and queries for RDF validation.
+  - [`src/evaluation/`](./src/evaluation/) – Code and queries for RDF validation.
   - [`src/retrieval-tasks/`](./src/retrieval-tasks/) – Source code and queries for retrieval, exploration and use case examples.
 - [`v01/`](./v01) – Earlier version of the KG.
 - [`zb-virtuoso/`](./zb-virtuoso) – Docker settings for the Virtuoso triple store.
