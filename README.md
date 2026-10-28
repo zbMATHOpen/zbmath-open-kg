@@ -122,15 +122,14 @@ We provide SPARQL query examples for exploring the knowledge graph, covering its
 ## Repository Structure
 
 - [cqs/](./cqs) – All competency questions along with their SPARQL queries and description.
-- [data/](./data) – `.jsonl` raw data and `.ttl` RDF KG (subset), ontology files (`.ttl`), etc.
-- [front/](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability).
-- [src/](./src) – Source code for KG construction (data harvesting, construction, statistics calculation, RDF transformation, preprocessing, etc).
+- [data/](./data) – Sample data, including _.jsonl_ raw data, _.ttl_ RDF data and ontology-related files.
+- [front/](./front) – Docker settings for Fuseki triple store (sample only; full dump runs on Virtuoso for scalability).
+- [src/](./src) – Source code for KG construction, validation, and usage examples.
   - [src/evaluation/](./src/evaluation/) – Code and queries for RDF validation.
   - [src/retrieval-tasks/](./src/retrieval-tasks/) – Source code and queries for retrieval, exploration and use case examples.
 - [v01/](./v01) – Earlier version of the KG.
 - [zb-virtuoso/](./zb-virtuoso) – Docker settings for the Virtuoso triple store.
-- [README.md](./README.md) – Project documentation.
-- [requirements.txt](requirements.txt) – Library and dependency to run the source code in the repository.
+- [requirements.txt](requirements.txt) – Libraries and dependencies to run the source code in the repository.
 
 ## Citation
 
