@@ -13,12 +13,13 @@ The full zbMATh Open KG RDF data dumps are available via Zenodo: [DOI:10.5281/ze
 - [Ontology and Metadata Descriptions](#ontology-and-metadata-descriptions)
 - [Key Statistics](#key-statistics)
 - [Key Features](#key-features)
-- [Construction and Setup](#construction-and-setup)
+- [Data Construction and Validation](#data-construction-and-validation)
   - [Prerequisites](#prerequisites)
   - [Data Harvesting](#data-harvesting)
-  - [RDF Construction](#rdf-construction)
+  - [Data Construction](#data-construction)
   - [RDF Triple Store Setup](#rdf-triple-store-setup)
-- [Query Examples](#query-examples)
+  - [Data Validation](#data-validation)
+- [Query and Use Case Examples](#query-and-use-case-examples)
 - [Repository Structure](#repository-structure)
 - [Citation](#citation)
 - [License](#license)
@@ -68,7 +69,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 - **SPARQL Query Interface**  
   A SPARQL endpoint (temporarily at [**SPARQL endpoint url**](http://212.227.170.235:8890/sparql)) for directly executing queries over the KG.
   
-## Construction and Setup
+## Data Construction and Validation
 
 ### Prerequisites
 
@@ -76,7 +77,7 @@ The following statistics are reported as of July 2026. The current KG was constr
 - Docker (for running RDF triple stores)  
 - Python libraries: `rdflib`, `SPARQLWrapper`, and others (see requirements.txt)  
   
-### Raw Data Harvesting
+### Data Harvesting
 
 To harvest raw jsonl data by zbMATH ID (e.g., ID list of zbMATH open access subset: [zbMATH OA subset](https://zenodo.org/records/8021789)), run:
 
@@ -86,7 +87,7 @@ python src/harvest-by-id.py
 
 For bulk download (via _sickle_), refers to: [zbMATHOpen Harvester](https://github.com/zbMATHOpen/mscHarvester)
 
-### RDF Construction
+### Data Construction
 
 Using raw `.jsonl` zbMATH data obtained from the API (see example: [`data/subset-200.jsonl`](./data/subset-200.jsonl)), run the following commands to automatically generate the RDF KG:
 
@@ -108,18 +109,24 @@ As the full dataset is large, we also provide a small sample subset of the zbMAT
 - [Openlink Virtuoso](https://virtuoso.openlinksw.com/): see [`zb-virtuoso`](./zb-virtuoso) directory.
 - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/): see the [`front/`](./front) directory.
 
-## Query Examples
+### Data Validation
 
-We provide SPARQL query examples for exploring the knowledge graph, covering its main retrieval and relational capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; please refer to [CQs](./cqs) for these query examples.
+To validate the structural consistency of the knowledge graph, run the queries in [`structural-validity.sparql`](./use-cases-and-evaluation/structural-validity.sparql). These checks targeted various aspects of structural consistency, such as missing required properties, invalid or unexpected datatypes, and inconsistent class assignments.
+
+Additionally, the coverage and validity was evaluated using 45 competency questions (CQs) defined by expert to assess the graph's core retrieval and relational capabilities. For each CQ, a SPARQL query was executed, and the results were manually compared with the expected answers. See the CQs and corresponding SPARQL queries here: [CQs](./cqs)
+
+## Query and Use Case Examples
+
+We provide SPARQL query examples for exploring the knowledge graph, covering its core retrieval capabilities, including bibliographic information, scholarly relationships, and temporal and historical information; refer to [CQs](./cqs) for these query examples. Use case examples are provided: [./use-cases-and-evaluation/](./use-cases-and-evaluation/), with the code provided here: [`src/retrieval-tasks/`](./src/retrieval-tasks/)
 
 ## Repository Structure
 
 - [`cqs/`](./cqs) – All competency questions along with their SPARQL queries and description.
 - [`data/`](./data) – `.jsonl` raw data and `.ttl` RDF KG (subset), ontology files (`.ttl`), etc.
-- [`front/`](./front) – Fuseki triple store setup for serving the RDF subset (example only — SPARQL endpoint runs on Virtuoso for scalability)
+- [`front/`](./front) – Triple store setup (Fuseki) for serving the RDF subset (example only; endpoint runs on Virtuoso for scalability)
 - [`src/`](./src) – Source code for KG construction (data harvest, statistics calculation, RDF transformation, etc).
 - [`src/retrieval-tasks/`](./src/retrieval-tasks/) – Source code and SPARQL queries for historically-grounded scholarly exploration and discovery.
-- [`use-case/`](./use-case) – Evaluation and Use case-specific results and visualizations
+- [`use-cases-and-evaluation/`](./use-case-and-evaluation) – Evaluation and Use case-specific results and visualizations
 - [`v01/`](./v01) – Earlier version of the KG
 - [`zb-virtuoso/`](./zb-virtuoso) – Docker settings for the Virtuoso triple store
 - [`run-convert.sh`](./run-convert.sh) – Shell script to convert raw data into RDF format
